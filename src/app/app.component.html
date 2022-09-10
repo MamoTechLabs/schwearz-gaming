@@ -1,0 +1,123 @@
+<!--================Header Menu Area =================-->
+<header class="header_area">
+  <div class="main_menu">
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <a class="navbar-brand logo_h"><img src="./assets/img/logowhite.png" height="150" alt=""></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
+          <ul class="nav navbar-nav menu_nav justify-content-center" style="visibility: hidden;">
+            <li class="nav-item active"><a class="nav-link">Home</a></li>
+            <li class="nav-item submenu dropdown">
+              <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                aria-expanded="false">Blog</a>
+              <ul class="dropdown-menu">
+                <li class="nav-item"><a class="nav-link">Blog</a></li>
+                <li class="nav-item"><a class="nav-link">Blog Details</a></li>
+              </ul>
+            </li>
+            <li class="nav-item"><a class="nav-link">Contact</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li class="nav-item"><a class="primary_btn">join us</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>
+<!--================Header Menu Area =================-->
+
+<!--================Home Banner Area =================-->
+<section class="home_banner_area">
+  <div class="banner_inner">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="home_left_img">
+            <img class="img-fluid" src="assets/img/banner/home-left.png" alt="" *ngIf="!playOn">
+            <div id="playbox" [style]="{'height': playOn ? '501px' : '0px'}">
+              <div class="d-flex text-bold justify-content-center align-items-center bg-danger" id="timer" *ngIf="playOn"></div>
+              <!-- <canvas class="img-fluid" width="640" height="480" id="maze"></canvas> -->
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="banner_content">
+            <h2>
+              Simplicity is the Luxury
+              that not everyone can afford. <br>
+            </h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod temp or incididunt ut labore et
+              dolore
+              magna aliqua. Ut enim ad minim.
+            </p>
+            <div class="d-flex align-items-center">
+              <a id="play-home-video" class="video-play-button" data-toggle="modal" data-target="#exampleModal">
+                <span></span>
+              </a>
+              <div class="watch_video text-uppercase">
+                Play On
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Add Details</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+
+          <div class="row">
+            <div class="col-md-12 mb-12">
+              <div class="form-outline">
+                <label class="form-label" for="firstName">Full Name</label>
+                <input type="text" id="firstName" class="form-control form-control-lg" />
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-12 mb-12 pb-2">
+              <div class="form-outline">
+                <label class="form-label" for="emailAddress">Email</label>
+                <input type="email" id="emailAddress" class="form-control form-control-lg" />
+              </div>
+            </div>
+            <div class="col-md-12 mb-12 pb-2">
+              <div class="form-outline">
+                <label class="form-label" for="phoneNumber">Phone Number</label>
+                <input type="tel" id="phoneNumber" class="form-control form-control-lg" />
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="playOn = false; openPlayGround()">Close</button>
+        <button type="button" class="btn btn-primary" (click)="playOn = true; openPlayGround()">Submit</button>
+      </div>
+    </div>
+  </div>
+</div>
